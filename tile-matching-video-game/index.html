@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>title</title>
+<style>
+body {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	
+	background-color: hsl(420, 0%, 30%);
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+caption {
+	font-family: monospace;
+}
+
+.symbol_container {
+	width: 3em;
+	height: 3em;
+	text-align: center;
+	vertical-align: middle;
+	
+	color: whitesmoke;
+	font-weight: 900;
+	font-size: x-large;
+	
+	display: grid;
+	grid-template-columns: 1fr auto auto 1fr;
+	grid-template-rows: 1fr auto auto 1fr;
+	grid-template-areas: ". . . ." ". ⚀ ⚁ ." ". ⚂ ⚃ ." ". . . .";
+	grid-gap: 3px;
+}
+
+.symbol_container :nth-child(1) { grid-area: ⚀ }
+.symbol_container :nth-child(2) { grid-area: ⚁ }
+.symbol_container :nth-child(3) { grid-area: ⚂ }
+.symbol_container :nth-child(4) { grid-area: ⚃ }
+
+.symbol_container.empty { background-color: hsl(120, 100%, 10%) }
+.symbol_container.unreachable { background-color: hsl(320, 100%, 20%) }
+.symbol_container.default { background-color: hsl(220, 100%, 70%) }
+.symbol_container.selected { background-color: hsl(220, 100%, 20%) }
+.symbol_container.reachable { background-color: hsl(320, 100%, 70%) }
+
+.symbol_container.empty > div { display: none }
+</style>
+<script defer src=index.js></script>
+<div>tile-matching-video-game</div>
